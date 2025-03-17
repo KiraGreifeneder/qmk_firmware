@@ -15,3 +15,9 @@
 #define SELECT_SOFT_SERIAL_SPEED 1
 // #define SPLIT_MAX_CONNECTION_ERRORS 10 // 10 attempts until it is assumed the other half isn't connected and gives up
 #define SPLIT_LAYER_STATE_ENABLE
+
+#define SERIAL_DEBUG
+#define IS_COMMAND() ( \
+    keyboard_report->mods == (MOD_BIT(KC_LSHIFT) | MOD_BIT(KC_RSHIFT)) || \
+    keyboard_report->mods == (MOD_BIT(KC_SPACE) | MOD_BIT(KC_B)) \
+)
