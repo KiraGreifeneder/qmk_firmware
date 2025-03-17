@@ -12,6 +12,6 @@
 
 #define MASTER_LEFT
 #define SOFT_SERIAL_PIN D1
-#define SELECT_SOFT_SERIAL_SPEED 5
-#define SPLIT_MAX_CONNECTION_ERRORS 10 // 10 attempts until it is assumed the other half isn't connected and gives up
+#define SELECT_SOFT_SERIAL_SPEED 1
+// #define SPLIT_MAX_CONNECTION_ERRORS 10 // 10 attempts until it is assumed the other half isn't connected and gives up
 #define SPLIT_LAYER_STATE_ENABLE
