@@ -23,5 +23,7 @@
 
 #define SPLIT_USB_TIMEOUT 2500 
 
+#define WAIT_FOR_USB
+
 // #define SERIAL_DEBUG
 // #define IS_COMMAND() ( keyboard_report->mods == (MOD_BIT(KC_SPACE) | MOD_BIT(KC_B)) )
