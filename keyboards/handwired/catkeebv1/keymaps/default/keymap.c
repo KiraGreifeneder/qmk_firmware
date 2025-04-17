@@ -49,15 +49,15 @@ tap_dance_action_t tap_dance_actions[] = {
 #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
     [0] = { 
-        ENCODER_CCW_CW(KC_UNDO, KC_AGAIN), 
+        ENCODER_CCW_CW(KC_BRID, KC_BRIU), 
         ENCODER_CCW_CW(KC_KB_VOLUME_DOWN, KC_KB_VOLUME_UP), 
     },
     [1] = { 
-        ENCODER_CCW_CW(KC_UNDO, KC_AGAIN), 
+        ENCODER_CCW_CW(KC_BRID, KC_BRIU), 
         ENCODER_CCW_CW(KC_KB_VOLUME_DOWN, KC_KB_VOLUME_UP), 
     },
     [2] = { 
-        ENCODER_CCW_CW(KC_UNDO, KC_AGAIN), 
+        ENCODER_CCW_CW(KC_BRID, KC_BRIU), 
         ENCODER_CCW_CW(KC_KB_VOLUME_DOWN, KC_KB_VOLUME_UP), 
     },
 };
@@ -73,11 +73,11 @@ enum custom_keycodes {
 // double tapping the mod key switches to the debug layer, holding momentarily switches to the special layer
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(
-        KC_ESC,  KC_GRAVE,              KC_1,    KC_2,        KC_3,     KC_4, KC_5, KC_6,             KC_7,     KC_8,    KC_9,    KC_0,    KC_SLASH, KC_BSPC, KC_DEL,
-        KC_NO,   KC_TAB,                KC_Q,    KC_W,        KC_E,     KC_R, KC_T, KC_LBRC,          KC_RBRC,  KC_Y,    KC_U,    KC_I,    KC_O,     KC_P,    KC_QUOT,
-        KC_MFFD, TD(TD_SPECIAL_DEBUG),  KC_A,    KC_S,        KC_D,     KC_F, KC_G, KC_MINUS,         KC_EQL,   KC_H,    KC_J,    KC_K,    KC_L,     KC_SCLN, KC_ENTER,
-        KC_MPLY, KC_LEFT_SHIFT,         KC_Z,    KC_X,        KC_C,     KC_V, KC_B, KC_KB_MUTE,       KC_BSLS,  KC_N,    KC_M,    KC_COMM, KC_DOT,   KC_UP,   KC_RIGHT_SHIFT,
-        KC_MRWD, KC_LEFT_CTRL,          KC_LGUI, KC_LEFT_ALT, KC_SPACE,                               KC_SPACE, KC_LEFT, KC_DOWN, KC_RIGHT
+        KC_ESC,              KC_GRAVE,              KC_1,    KC_2,        KC_3,     KC_4, KC_5, KC_6,             KC_7,     KC_8,    KC_9,    KC_0,    KC_SLASH, KC_BSPC, KC_DEL,
+        KC_NO,               KC_TAB,                KC_Q,    KC_W,        KC_E,     KC_R, KC_T, KC_LBRC,          KC_RBRC,  KC_Y,    KC_U,    KC_I,    KC_O,     KC_P,    KC_QUOT,
+        KC_MEDIA_NEXT_TRACK, TD(TD_SPECIAL_DEBUG),  KC_A,    KC_S,        KC_D,     KC_F, KC_G, KC_MINUS,         KC_EQL,   KC_H,    KC_J,    KC_K,    KC_L,     KC_SCLN, KC_ENTER,
+        KC_MEDIA_PLAY_PAUSE, KC_LEFT_SHIFT,         KC_Z,    KC_X,        KC_C,     KC_V, KC_B, KC_KB_MUTE,       KC_BSLS,  KC_N,    KC_M,    KC_COMM, KC_DOT,   KC_UP,   KC_RIGHT_SHIFT,
+        KC_MEDIA_NEXT_TRACK, KC_LEFT_CTRL,          KC_LGUI, KC_LEFT_ALT, KC_SPACE,                               KC_SPACE, KC_LEFT, KC_DOWN, KC_RIGHT
     ),
     [_SPECIAL] = LAYOUT(
         _______,       _______,       KC_F1,   KC_F2,       KC_F3,    KC_F4,   KC_F5,   KC_F6,           KC_F7,         KC_F8,         KC_F9,   KC_F10,      KC_F11,   KC_F12,  _______,
