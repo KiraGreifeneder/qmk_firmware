@@ -19,7 +19,9 @@
 
 // share layer state across sides
 #define SPLIT_LAYER_STATE_ENABLE
+
 #define SPLIT_USB_DETECT
+#define SPLIT_WATCHDOG_ENABLE
 
 #define SPLIT_USB_TIMEOUT 2500 
 
