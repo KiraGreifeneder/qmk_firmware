@@ -19,36 +19,31 @@ enum {
     TD_SPECIAL_DEBUG, // Tap dance for SPECIAL layer hold, DEBUG layer toggle
 };
 
-
-// Functions for the tap dance
+// check how many taps and if it is being held
 void tap_dance_special_debug_finished(tap_dance_state_t *state, void *user_data) {
+    // Recognize one tap
     if (state->count == 1) {
-        // Single tap - do nothing when tapped once
+        // recognise being held
         if (state->pressed) {
-            // But if held, activate SPECIAL layer momentarily
-            layer_on(_SPECIAL);
+            layer_on(_SPECIAL); // Activate SPECIAL layer
         }
     } else if (state->count >= 2) {
-        // Double tap - toggle DEBUG layer
+        // We have been double tapped - toggle DEBUG layer
         layer_invert(_DEBUG);
     }
 }
 
+// is called after tap dance finshed and actions have been taken
 void tap_dance_special_debug_reset(tap_dance_state_t *state, void *user_data) {
-    // If the key was held and released, and we were on the SPECIAL layer, turn it off
-    if (state->count == 1 && layer_state_is(_SPECIAL)) {
-        layer_off(_SPECIAL);
-    }
+    // Always turn the special layer off when the tap dance is reset, i.e. when we stop pressing the button
+    layer_off(_SPECIAL);
 }
 
 // Tap Dance definitions
 tap_dance_action_t tap_dance_actions[] = {
-    // Tap once: Do nothing
-    // Tap twice: Toggle DEBUG layer
-    // Hold: Activate SPECIAL layer momentarily
+    // 0: Do nothing on one tap, 1: actions to be taken after taps have been recognised, 2: after actions have been taken
     [TD_SPECIAL_DEBUG] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, tap_dance_special_debug_finished, tap_dance_special_debug_reset),
 };
-
 
 // encoder mapping
 #if defined(ENCODER_MAP_ENABLE)
